@@ -7,7 +7,7 @@
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#0a0a0a">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
@@ -26,7 +26,18 @@
 
   <!-- App Shell -->
   <div class="app" id="app">
-    <header class="header">
+    <header class="top-bar" id="topBar">
+      <div class="tb-left">
+        <span class="tb-level" id="tbLevel">Lv 1</span>
+        <span class="tb-title" id="tbTitle">Novice Lifter I</span>
+      </div>
+      <div class="tb-right">
+        <span class="tb-stat" id="tbXP">0 XP</span>
+        <span class="tb-stat" id="tbStreak">🔥 0</span>
+      </div>
+    </header>
+
+    <div class="header">
       <h1 class="header-title">Iron Build</h1>
       <div class="header-subtitle">Lift · Build · Grow · Ascend</div>
     </header>

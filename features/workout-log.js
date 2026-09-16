@@ -15,11 +15,13 @@
       html += '<div style="margin-bottom:12px">';
       html += '<div style="color:var(--primary);font-size:0.75rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px">' + muscle + '</div>';
       exercises.forEach(function(ex) {
-        html += '<div style="padding:10px 12px;cursor:pointer;border-radius:8px;margin-bottom:4px;background:var(--card);border:1px solid var(--border)" ' +
+        html += '<div style="padding:10px 12px;cursor:pointer;border-radius:8px;margin-bottom:4px;background:var(--card-bg);border:1px solid var(--border)" ' +
           'onclick="startWorkoutExercise(\'' + ex.id + '\');closeToastOverlay()"' +
           'onmouseover="this.style.borderColor=\'var(--primary)\'" onmouseout="this.style.borderColor=\'var(--border)\'">' +
-          '<span style="margin-right:8px">' + ex.icon + '</span>' + escapeHTML(ex.name) +
-          '<span style="float:right;color:var(--gold);font-size:0.75rem">' + ex.xp + ' XP</span></div>';
+          '<div style="display:flex;align-items:center;gap:8px"><span>' + ex.icon + '</span><span style="font-weight:600">' + escapeHTML(ex.name) + '</span>' +
+          '<span style="margin-left:auto;color:var(--gold);font-size:0.72rem">' + ex.xp + ' XP</span></div>' +
+          (ex.desc ? '<div style="font-size:0.68rem;color:var(--text2);margin-top:4px;line-height:1.4">' + escapeHTML(ex.desc) + '</div>' : '') +
+          '</div>';
       });
       html += '</div>';
     });
@@ -31,12 +33,13 @@
     var ex = getExerciseById(exerciseId);
     if (!ex) return;
     var html = '<span class="toast-icon">' + ex.icon + '</span><h3>' + escapeHTML(ex.name) + '</h3>';
-    html += '<div style="margin-top:16px;text-align:left">';
-    html += '<div style="margin-bottom:12px"><label style="color:var(--text2);font-size:0.8rem">Sets</label>';
+    if (ex.desc) html += '<div style="color:var(--text2);font-size:0.78rem;margin-top:6px;line-height:1.4;text-align:left">' + escapeHTML(ex.desc) + '</div>';
+    html += '<div style="margin-top:14px;text-align:left">';
+    html += '<div style="margin-bottom:10px"><label style="color:var(--text2);font-size:0.75rem">Sets</label>';
     html += '<input id="wSets" type="number" value="3" min="1" max="20" style="width:100%;padding:10px;border-radius:10px;background:var(--bg);color:var(--text);border:1px solid var(--border);margin-top:4px;font-family:var(--font)"></div>';
-    html += '<div style="margin-bottom:12px"><label style="color:var(--text2);font-size:0.8rem">Reps per set</label>';
+    html += '<div style="margin-bottom:10px"><label style="color:var(--text2);font-size:0.75rem">Reps per set</label>';
     html += '<input id="wReps" type="number" value="10" min="1" max="100" style="width:100%;padding:10px;border-radius:10px;background:var(--bg);color:var(--text);border:1px solid var(--border);margin-top:4px;font-family:var(--font)"></div>';
-    html += '<div style="margin-bottom:16px"><label style="color:var(--text2);font-size:0.8rem">Weight (' + S.units + ')</label>';
+    html += '<div style="margin-bottom:14px"><label style="color:var(--text2);font-size:0.75rem">Weight (' + S.units + ')</label>';
     html += '<input id="wWeight" type="number" value="0" min="0" step="0.5" style="width:100%;padding:10px;border-radius:10px;background:var(--bg);color:var(--text);border:1px solid var(--border);margin-top:4px;font-family:var(--font)"></div>';
     html += '<button class="btn-primary" style="width:100%" onclick="saveWorkoutExercise(\'' + ex.id + '\')">Log Exercise</button>';
     html += '</div>';
