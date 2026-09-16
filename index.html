@@ -104,5 +104,12 @@
   <script src="features/shop.js"></script>
   <script src="features/profile.js"></script>
   <script src="core/actions.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js').catch(function(e) {
+        console.warn('SW registration failed:', e);
+      });
+    }
+  </script>
 </body>
 </html>
