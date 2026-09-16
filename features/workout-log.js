@@ -82,6 +82,10 @@
     closeToastOverlay();
     renderAll();
 
+    // Check quests and achievements
+    if (typeof checkQ === 'function') checkQ();
+    if (typeof checkAchievements === 'function') checkAchievements();
+
     openToastModal(
       '<span class="toast-icon">✅</span>' +
       '<h3>Exercise Logged!</h3>' +
@@ -210,6 +214,9 @@
     saveState();
     closeToastOverlay();
     renderAll();
+
+    if (typeof checkQ === 'function') checkQ();
+    if (typeof checkAchievements === 'function') checkAchievements();
 
     openToastModal(
       '<span class="toast-icon">⚡</span>' +
