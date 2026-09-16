@@ -42,3 +42,43 @@ describe('Storage', () => {
     assert.equal(Storage.load('toDelete'), null);
   });
 });
+
+// Load levels and state
+require('../data/levels.js');
+require('../core/state.js');
+
+describe('state', () => {
+  it('freshState has all required keys', () => {
+    const s = freshState();
+    assert.ok(s.log);
+    assert.equal(s.xp, 0);
+    assert.equal(s.lv, 1);
+    assert.equal(s.streak, 0);
+    assert.ok(Array.isArray(s.goals));
+    assert.ok(typeof s.prs === 'object');
+  });
+
+  it('normalizeState fills missing keys', () => {
+    const partial = { xp: 500, lv: 1 };
+    const normalized = normalizeState(partial);
+    assert.equal(normalized.xp, 500);
+    assert.ok(normalized.log !== undefined);
+    assert.ok(normalized.goals !== undefined);
+  });
+});
+
+describe('level system', () => {
+  it('xpFor(1) = 0', () => { assert.equal(xpFor(1), 0); });
+
+  it('xpFor(2) = floor(100 * 2^1.5) = 282', () => { assert.equal(xpFor(2), 282); });
+
+  it('lvFrom(0) = 1', () => { assert.equal(lvFrom(0), 1); });
+
+  it('lvFrom(282) = 2', () => { assert.equal(lvFrom(282), 2); });
+
+  it('lvTitle(1) = Novice Lifter I', () => { assert.equal(lvTitle(1), 'Novice Lifter I'); });
+
+  it('lvTitle(100) = Iron Titan', () => { assert.equal(lvTitle(100), 'Iron Titan'); });
+
+  it('LEVELS has 100 entries', () => { assert.equal(LEVELS.length, 100); });
+});
