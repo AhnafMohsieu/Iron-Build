@@ -70,3 +70,7 @@ function getExercisesByMuscle(muscle) {
 function getExerciseById(id) {
   return EXERCISES.find(function(e) { return e.id === id; });
 }
+
+window.EXERCISES = EXERCISES;
+window.getExercisesByMuscle = getExercisesByMuscle;
+window.getExerciseById = getExerciseById;
