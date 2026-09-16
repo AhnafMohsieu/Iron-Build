@@ -18,7 +18,7 @@
         html += '<div style="padding:10px 12px;cursor:pointer;border-radius:8px;margin-bottom:4px;background:var(--card-bg);border:1px solid var(--border)" ' +
           'onclick="startWorkoutExercise(\'' + ex.id + '\');closeToastOverlay()"' +
           'onmouseover="this.style.borderColor=\'var(--primary)\'" onmouseout="this.style.borderColor=\'var(--border)\'">' +
-          '<div style="display:flex;align-items:center;gap:8px"><span>' + ex.icon + '</span><span style="font-weight:600">' + escapeHTML(ex.name) + '</span>' +
+          '<div style="display:flex;align-items:center;gap:8px"><span>' + gymIcon(ex.icon, 'gym-icon-sm') + '</span><span style="font-weight:600">' + escapeHTML(ex.name) + '</span>' +
           '<span style="margin-left:auto;color:var(--gold);font-size:0.72rem">' + ex.xp + ' XP</span></div>' +
           (ex.desc ? '<div style="font-size:0.68rem;color:var(--text2);margin-top:4px;line-height:1.4">' + escapeHTML(ex.desc) + '</div>' : '') +
           '</div>';
@@ -32,7 +32,7 @@
   function startWorkoutExercise(exerciseId) {
     var ex = getExerciseById(exerciseId);
     if (!ex) return;
-    var html = '<span class="toast-icon">' + ex.icon + '</span><h3>' + escapeHTML(ex.name) + '</h3>';
+    var html = gymIcon(ex.icon, 'gym-icon-lg') + '<h3>' + escapeHTML(ex.name) + '</h3>';
     if (ex.desc) html += '<div style="color:var(--text2);font-size:0.78rem;margin-top:6px;line-height:1.4;text-align:left">' + escapeHTML(ex.desc) + '</div>';
     html += '<div style="margin-top:14px;text-align:left">';
     html += '<div style="margin-bottom:10px"><label style="color:var(--text2);font-size:0.75rem">Sets</label>';
@@ -161,7 +161,7 @@
     var html = '<div class="exercise-grid" style="padding:0 18px">';
     EXERCISES.slice(0, 20).forEach(function(ex) {
       html += '<div class="card exercise-card" onclick="quickLogExercise(\'' + ex.id + '\')">';
-      html += '<div class="exercise-icon">' + ex.icon + '</div>';
+      html += '<div class="exercise-icon">' + gymIcon(ex.icon, 'gym-icon') + '</div>';
       html += '<div class="exercise-name">' + escapeHTML(ex.name) + '</div>';
       html += '<div class="exercise-xp">' + ex.xp + ' XP</div>';
       html += '</div>';
@@ -173,7 +173,7 @@
   function quickLogExercise(exerciseId) {
     var ex = getExerciseById(exerciseId);
     if (!ex) return;
-    var html = '<span class="toast-icon">' + ex.icon + '</span><h3>Quick Log: ' + escapeHTML(ex.name) + '</h3>';
+    var html = gymIcon(ex.icon, 'gym-icon-lg') + '<h3>Quick Log: ' + escapeHTML(ex.name) + '</h3>';
     html += '<div style="margin-top:16px;text-align:left">';
     html += '<div style="margin-bottom:12px"><label style="color:var(--text2);font-size:0.8rem">Total Reps</label>';
     html += '<input id="qReps" type="number" value="20" min="1" style="width:100%;padding:10px;border-radius:10px;background:var(--bg);color:var(--text);border:1px solid var(--border);margin-top:4px;font-family:var(--font)"></div>';

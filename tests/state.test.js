@@ -70,11 +70,11 @@ describe('state', () => {
 describe('level system', () => {
   it('xpFor(1) = 0', () => { assert.equal(xpFor(1), 0); });
 
-  it('xpFor(2) = floor(100 * 2^1.5) = 282', () => { assert.equal(xpFor(2), 282); });
+  it('xpFor(2) = 100 (linear)', () => { assert.equal(xpFor(2), 100); });
 
   it('lvFrom(0) = 1', () => { assert.equal(lvFrom(0), 1); });
 
-  it('lvFrom(282) = 2', () => { assert.equal(lvFrom(282), 2); });
+  it('lvFrom(100) = 2', () => { assert.equal(lvFrom(100), 2); });
 
   it('lvTitle(1) = Novice Lifter I', () => { assert.equal(lvTitle(1), 'Novice Lifter I'); });
 

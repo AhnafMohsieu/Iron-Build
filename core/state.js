@@ -37,7 +37,7 @@
 
   function xpFor(lv) {
     if (lv <= 1) return 0;
-    return Math.floor(100 * Math.pow(lv, 1.5));
+    return 100 * (lv - 1);
   }
 
   function lvFrom(xp) {
