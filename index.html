@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <title>Iron Build · Your Gym Companion</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <!-- Intro Overlay -->
+  <div id="introOverlay" class="intro-overlay">
+    <div class="intro-content">
+      <div class="intro-icon">🏋️</div>
+      <h1 class="intro-title">IRON BUILD</h1>
+      <p class="intro-subtitle">Lift · Build · Grow · Ascend</p>
+      <button id="startBtn" class="intro-btn">Start Your Journey</button>
+    </div>
+  </div>
+
+  <!-- Toast Overlay -->
+  <div id="toastOverlay" class="toast-overlay"></div>
+
+  <!-- App Shell -->
+  <div class="app" id="app">
+    <header class="header">
+      <h1 class="header-title">Iron Build</h1>
+      <div class="header-subtitle">Lift · Build · Grow · Ascend</div>
+    </header>
+
+    <div class="level-row">
+      <div class="level-badge">
+        <span class="lv-num" id="lvNum">1</span>
+        <span class="lv-title" id="lvTitle">Novice Lifter</span>
+      </div>
+      <div class="xp-wrap" id="xpWrap">
+        <div class="xp-outer"><div class="xp-inner" id="xpBar" style="width:0%"></div></div>
+        <div class="xp-label" id="xpLabel">0 / 100 XP</div>
+      </div>
+    </div>
+
+    <div class="streak-bar">
+      <span class="streak-fire">🔥</span>
+      <div class="streak-info">
+        <h3 id="strDays">0 Day Streak</h3>
+        <p id="strMsg">Start your journey today</p>
+      </div>
+      <div class="streak-best">
+        <div class="best-num" id="bestStr">0</div>
+        <div class="best-label">All-Time</div>
+      </div>
+    </div>
+
+    <div class="tier-nav-container">
+      <div class="tier1-tabs" id="tier1Tabs"></div>
+      <div class="tier2-scroll"><div class="tier2-tabs" id="tier2Tabs"></div></div>
+    </div>
+
+    <!-- Tab panels rendered dynamically -->
+    <div id="panelContainer"></div>
+  </div>
+
+  <!-- Scripts in dependency order -->
+  <script src="core/helpers.js"></script>
+  <script src="core/storage.js"></script>
+  <script src="data/levels.js"></script>
+  <script src="core/state.js"></script>
+  <script src="core/random.js"></script>
+  <script src="core/xp.js"></script>
+  <script src="data/tab-groups.js"></script>
+  <script src="data/exercises.js"></script>
+  <script src="data/quests.js"></script>
+  <script src="data/achievements.js"></script>
+  <script src="data/tips.js"></script>
+  <script src="data/streak-msgs.js"></script>
+  <script src="data/warmup-routines.js"></script>
+  <script src="data/shop-items.js"></script>
+  <script src="core/tabs.js"></script>
+  <script src="core/render.js"></script>
+  <script src="render/modals.js"></script>
+  <script src="render/dynamic.js"></script>
+  <script src="features/workout-log.js"></script>
+  <script src="features/goals.js"></script>
+  <script src="features/body-metrics.js"></script>
+  <script src="features/pr-history.js"></script>
+  <script src="features/quests.js"></script>
+  <script src="features/achievements.js"></script>
+  <script src="features/calendar.js"></script>
+  <script src="features/analytics.js"></script>
+  <script src="features/shop.js"></script>
+  <script src="features/profile.js"></script>
+  <script src="core/actions.js"></script>
+</body>
+</html>
