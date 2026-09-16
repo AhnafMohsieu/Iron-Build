@@ -7,7 +7,7 @@
       var owned = S.ownedTitles && S.ownedTitles.indexOf(item.id) !== -1;
       var canAfford = S.xp >= item.cost;
       html += '<div class="card' + (owned ? ' done' : '') + '">';
-      html += '<div class="card-icon">' + (item.type === 'title' ? '🏷️' : item.type === 'frame' ? item.value : '⚡') + '</div>';
+      html += '<div class="card-icon">' + (item.type === 'title' ? gymIcon('label', 'gym-icon') : item.type === 'frame' ? item.value : gymIcon('zap', 'gym-icon')) + '</div>';
       html += '<div class="card-info">';
       html += '<div class="card-name">' + escapeHTML(item.name) + '</div>';
       html += '<div class="card-meta">' + item.type + '</div>';
@@ -30,7 +30,7 @@
     S.ownedTitles.push(item.id);
     saveState();
     renderAll();
-    openToastModal('<span class="toast-icon">🛍️</span><h3>Purchased!</h3><div style="color:var(--primary);margin-top:4px">' + item.name + '</div>');
+    openToastModal(gymIcon('shopping', 'gym-icon-lg') + '<h3>Purchased!</h3><div style="color:var(--primary);margin-top:4px">' + item.name + '</div>');
   }
 
   window.renderShopPanel = renderShopPanel;

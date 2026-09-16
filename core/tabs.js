@@ -10,7 +10,7 @@
       var meta = CAT_META[cat];
       var btn = document.createElement('button');
       btn.className = 't1-btn' + (cat === currentCat ? ' active' : '');
-      btn.innerHTML = meta.icon + ' ' + meta.label;
+      btn.innerHTML = gymIcon(meta.icon, 'gym-icon-sm') + ' ' + meta.label;
       btn.onclick = function() { switchCategory(cat); };
       container.appendChild(btn);
     });
@@ -23,7 +23,7 @@
     tabs.forEach(function(tab) {
       var btn = document.createElement('button');
       btn.className = 't2-btn' + (tab.id === currentTab ? ' active' : '');
-      btn.innerHTML = '<span>' + tab.icon + '</span>' + tab.label;
+      btn.innerHTML = gymIcon(tab.icon, 'gym-icon-sm') + ' ' + tab.label;
       btn.onclick = function() { switchTab(tab.id); };
       container.appendChild(btn);
     });

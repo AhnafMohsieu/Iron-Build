@@ -1,7 +1,7 @@
 // features/goals.js — Goal CRUD and tracking
 (function() {
   function createGoal() {
-    var html = '<span class="toast-icon">🎯</span><h3>New Goal</h3>';
+    var html = '<img class="gym-icon-lg" src="assets/icons/emoji_u1f3af.png" alt="" role="img" loading="lazy"><h3>New Goal</h3>';
     html += '<div style="margin-top:14px;text-align:left">';
     html += '<div style="margin-bottom:10px"><label style="color:var(--text2);font-size:0.75rem">Goal Name</label>';
     html += '<input id="goalName" type="text" placeholder="e.g. Bench Press 100kg" style="width:100%;padding:10px;border-radius:10px;background:var(--bg);color:var(--text);border:1px solid var(--border);margin-top:4px;font-family:var(--font)"></div>';
@@ -24,7 +24,7 @@
     saveState();
     closeToastOverlay();
     renderAll();
-    openToastModal('<span class="toast-icon">✅</span><h3>Goal Created!</h3>');
+    openToastModal('<img class="gym-icon-lg" src="assets/icons/emoji_u2705.png" alt="" role="img" loading="lazy"><h3>Goal Created!</h3>');
   }
 
   function renderGoalsPanel(panel) {
@@ -37,7 +37,7 @@
       goals.forEach(function(g) {
         var pct = g.target > 0 ? Math.min(100, (g.current / g.target) * 100) : 0;
         html += '<div class="card' + (g.done ? ' done' : '') + '">';
-        html += '<div class="card-icon">' + (g.done ? '✅' : '🎯') + '</div>';
+        html += '<div class="card-icon">' + (g.done ? gymIcon('check', 'gym-icon') : gymIcon('target', 'gym-icon')) + '</div>';
         html += '<div class="card-info">';
         html += '<div class="card-name">' + escapeHTML(g.name) + '</div>';
         html += '<div class="card-meta">' + g.current + ' / ' + g.target + ' ' + g.unit + '</div>';

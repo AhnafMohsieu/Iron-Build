@@ -37,7 +37,7 @@
 
     // Update top bar streak
     var tbStreak = document.getElementById('tbStreak');
-    if (tbStreak) tbStreak.textContent = '🔥 ' + S.streak;
+    if (tbStreak) tbStreak.innerHTML = gymIcon('flame', 'gym-icon-sm') + ' ' + S.streak;
   }
 
   function renderAll() {

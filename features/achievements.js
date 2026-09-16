@@ -30,7 +30,7 @@
       var isUnlocked = S.achievements && S.achievements[a.id];
       if (isUnlocked) unlocked++;
       html += '<div class="card' + (isUnlocked ? ' done' : '') + '">';
-      html += '<div class="card-icon">' + (isUnlocked ? a.icon : '🔒') + '</div>';
+      html += '<div class="card-icon">' + (isUnlocked ? a.icon : gymIcon('lock', 'gym-icon')) + '</div>';
       html += '<div class="card-info">';
       html += '<div class="card-name">' + a.name + '</div>';
       html += '<div class="card-desc">' + a.desc + '</div>';

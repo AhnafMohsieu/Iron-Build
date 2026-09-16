@@ -47,7 +47,7 @@
     html += '<div class="exercise-grid">';
     exercises.forEach(function(ex) {
       html += '<div class="card exercise-card" onclick="startWorkoutExercise(\'' + ex.id + '\')">';
-      html += '<div class="exercise-icon">' + ex.icon + '</div>';
+      html += '<div class="exercise-icon">' + gymIcon(ex.icon, 'gym-icon') + '</div>';
       html += '<div class="exercise-name">' + escapeHTML(ex.name) + '</div>';
       if (ex.desc) html += '<div class="exercise-desc">' + escapeHTML(ex.desc) + '</div>';
       html += '<div class="exercise-type">' + ex.type + '</div>';

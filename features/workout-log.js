@@ -7,7 +7,7 @@
   }
 
   function openExercisePicker() {
-    var html = '<span class="toast-icon">🏋️</span><h3>Pick an Exercise</h3>';
+    var html = '<img class="gym-icon-lg" src="assets/icons/emoji_u1f3cb.png" alt="" role="img" loading="lazy"><h3>Pick an Exercise</h3>';
     html += '<div style="margin-top:16px;text-align:left;max-height:60vh;overflow-y:auto">';
     var muscles = ['chest','back','legs','shoulders','arms','core','bodyweight','cardio'];
     muscles.forEach(function(muscle) {
@@ -87,7 +87,7 @@
     if (typeof checkAchievements === 'function') checkAchievements();
 
     openToastModal(
-      '<span class="toast-icon">✅</span>' +
+      '<img class="gym-icon-lg" src="assets/icons/emoji_u2705.png" alt="" role="img" loading="lazy">' +
       '<h3>Exercise Logged!</h3>' +
       '<div style="color:var(--gold);margin-top:8px">+' + xpEarned + ' XP</div>'
     );
@@ -107,7 +107,7 @@
       S.totalPRs = (S.totalPRs || 0) + 1;
       setTimeout(function() {
         openToastModal(
-          '<span class="toast-icon">🏆</span>' +
+          '<img class="gym-icon-lg" src="assets/icons/emoji_u1f3c6.png" alt="" role="img" loading="lazy">' +
           '<h3>New PR!</h3>' +
           '<div style="color:var(--primary);margin-top:8px">' + weight + 'kg × ' + reps + ' reps</div>'
         );
@@ -219,7 +219,7 @@
     if (typeof checkAchievements === 'function') checkAchievements();
 
     openToastModal(
-      '<span class="toast-icon">⚡</span>' +
+      '<img class="gym-icon-lg" src="assets/icons/emoji_u26a1.png" alt="" role="img" loading="lazy">' +
       '<h3>Quick Logged!</h3>' +
       '<div style="color:var(--gold);margin-top:8px">+' + xpEarned + ' XP</div>'
     );

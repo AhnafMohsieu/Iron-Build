@@ -13,7 +13,7 @@
       var ex = getExerciseById(exId);
       var pr = prs[exId];
       html += '<div class="card">';
-      html += '<div class="card-icon" style="background:rgba(255,184,0,0.1);border-color:rgba(255,184,0,0.2)">🏆</div>';
+      html += '<div class="card-icon" style="background:rgba(255,184,0,0.1);border-color:rgba(255,184,0,0.2)">' + gymIcon('trophy', 'gym-icon') + '</div>';
       html += '<div class="card-info">';
       html += '<div class="card-name">' + (ex ? ex.name : exId) + '</div>';
       html += '<div class="card-meta">' + pr.weight + S.units + ' × ' + pr.reps + ' reps — ' + pr.date + '</div>';
