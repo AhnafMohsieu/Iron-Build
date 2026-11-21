@@ -2,7 +2,20 @@
 
 A gym and exercise tracking PWA with RPG gamification. Log workouts, level up, complete quests, and track your fitness progress — all with a dark, energy-driven UI.
 
-**Live Demo:** [ahnanfmoshieu.github.io/Iron-Build](https://ahnafmohsieu.github.io/Iron-Build)
+<p align="center">
+  <a href="https://ahnafmohsieu.github.io/Iron-Build/">
+    <img src="docs/screenshots/desktop.png" alt="Iron Build dashboard with workout log and XP level" width="100%">
+  </a>
+</p>
+
+<details>
+  <summary>Mobile view</summary>
+  <p align="center">
+    <img src="docs/screenshots/mobile.png" alt="Iron Build on mobile" width="320">
+  </p>
+</details>
+
+**Live Demo:** [ahnafmohsieu.github.io/Iron-Build](https://ahnafmohsieu.github.io/Iron-Build/)
 
 ## Features
 
@@ -106,4 +119,5 @@ node --test tests/
 
 ## License
 
-MIT
+All rights reserved. See [LICENSE](LICENSE). The code and content are published
+for viewing and evaluation only.
