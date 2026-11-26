@@ -1,5 +1,9 @@
 # Iron Build
 
+[![Live site](https://img.shields.io/badge/live-view-0e5a6b?style=flat-square)](https://ahnafmohsieu.github.io/Iron-Build/) [![License](https://img.shields.io/badge/license-all%20rights%20reserved-lightgrey?style=flat-square)](LICENSE)
+
+> ← [All projects](https://ahnafmohsieu.github.io/Portfolio/hub/)
+
 A gym and exercise tracking PWA with RPG gamification. Log workouts, level up, complete quests, and track your fitness progress — all with a dark, energy-driven UI.
 
 <p align="center">
